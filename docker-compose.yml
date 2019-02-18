@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    container_name: ginx-test
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./src:/sites/bootstrap
+      - ./src/downloads:/sites/downloads
